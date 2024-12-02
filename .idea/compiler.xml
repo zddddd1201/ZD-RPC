@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -10,6 +11,7 @@
         <module name="example-provider" />
         <module name="example-common" />
         <module name="example-consumer" />
+        <module name="zd-rpc-core" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />

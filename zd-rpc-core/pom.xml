@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.zd</groupId>
-  <artifactId>zd-rpc-easy</artifactId>
+  <artifactId>zd-rpc-core</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>zd-rpc-easy</name>
+  <name>zd-rpc-core</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -46,6 +46,13 @@
       <artifactId>kryo</artifactId>
       <version>5.6.0</version>
     </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>2.12.3</version>
+    </dependency>
+
+
     <!-- 注册中心 -->
     <!-- https://mvnrepository.com/artifact/io.etcd/jetcd-core -->
     <dependency>
@@ -79,5 +86,17 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
