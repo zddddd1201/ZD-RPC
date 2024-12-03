@@ -1,7 +1,10 @@
 package com.zd.yurpc;
 
+import com.zd.yurpc.config.RegistryConfig;
 import com.zd.yurpc.config.RpcConfig;
 import com.zd.yurpc.constant.RpcConstant;
+import com.zd.yurpc.registry.Registry;
+import com.zd.yurpc.registry.RegistryFactory;
 import com.zd.yurpc.utils.ConfigUtils;
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,6 +25,11 @@ public class RpcApplication {
     public static void init(RpcConfig newRpcConfig) {
         rpcConfig = newRpcConfig;
         log.info("rpc init, config = {}", newRpcConfig.toString());
+        // 注册中心初始化
+        RegistryConfig registryConfig = rpcConfig.getRegistryConfig();
+        Registry registry = RegistryFactory.getInstance(registryConfig.getRegistry());
+        registry.init(registryConfig);
+        log.info("registry init, config = {}", registryConfig);
     }
 
     /**
