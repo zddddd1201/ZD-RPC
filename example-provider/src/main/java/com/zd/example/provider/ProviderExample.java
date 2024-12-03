@@ -13,10 +13,12 @@ import com.zd.yurpc.registry.RegistryFactory;
 import com.zd.yurpc.server.HttpServer;
 import com.zd.yurpc.server.VertxHttpServer;
 import com.zd.example.provider.UserServiceImpl;
+import com.zd.yurpc.server.tcp.VertxTcpServer;
 
 /**
  * 服务提供者示例
  *
+
  */
 public class ProviderExample {
 
@@ -42,8 +44,8 @@ public class ProviderExample {
             throw new RuntimeException(e);
         }
 
-        // 启动 web 服务
-        HttpServer httpServer = new VertxHttpServer();
-        httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
+        // 启动 TCP 服务
+        VertxTcpServer vertxTcpServer = new VertxTcpServer();
+        vertxTcpServer.doStart(8080);
     }
 }

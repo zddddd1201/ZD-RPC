@@ -1,0 +1,4 @@
+failBack=com.zd.yurpc.fault.tolerant.FailBackTolerantStrategy
+failFast=com.zd.yurpc.fault.tolerant.FailFastTolerantStrategy
+failOver=com.zd.yurpc.fault.tolerant.FailOverTolerantStrategy
+failSafe=com.zd.yurpc.fault.tolerant.FailSafeTolerantStrategy
